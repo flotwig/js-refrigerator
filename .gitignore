@@ -1,1 +1,4 @@
 node_modules
+src/*.js
+yarn-error.log
+.vscode
