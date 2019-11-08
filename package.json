@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A small, 0-dependency JS module that can be used to make all property changes on an object throw an error.",
   "main": "src/index",
-  "repository": "https://github.com/flotwig/refrigerator",
+  "repository": "https://github.com/flotwig/js-refrigerator",
   "author": "Zach Bloomquist <zach@bloomqu.ist>",
   "license": "MIT",
   "private": false,
