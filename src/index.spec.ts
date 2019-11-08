@@ -90,7 +90,7 @@ describe('refrigerator', function () {
     describe('setPrototypeOf on', function () {
       it('primary object', function () {
         expect(()=>{
-          Object.setPrototypeOf(refrigerated.foo, null)
+          Object.setPrototypeOf(refrigerated, null)
         }).to.throw('Cannot set prototype of a refrigerated object.')
       })
 
