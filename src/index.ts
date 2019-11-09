@@ -5,9 +5,13 @@ export class RefrigeratorError extends Error {
   }
 }
 
-export default function refrigerate<T extends object>(obj: T): T {
-  function err(msg: string) {
-    return new RefrigeratorError(msg)
+function err(msg: string) {
+  return new RefrigeratorError(msg)
+}
+
+export function refrigerate<T extends object>(obj: T): T {
+  if (typeof obj !== 'object') {
+    throw new TypeError(`Only objects can be refrigerated, but a ${typeof obj} was passed.`)
   }
 
   return new Proxy(obj, {

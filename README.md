@@ -1,11 +1,13 @@
 # refrigerator
 
-`refrigerator` is a small, 0-dependency JS module that can be used to make all property changes on an object throw an error.
+`refrigerator` is a tool that can be used to make all property changes on an object throw an error.
+
+It's like [`Object.freeze`][freeze], except it also blocks modifying all child objects, and will throw an error even when not in strict mode.
 
 This can be useful when you want to validate that your JS code does not ever modify the arguments passed in to it.
 
 ```js
-const refrigerate = require('refrigerator')
+const { refrigerate } = require('refrigerator')
 
 const obj = {
   lisa: 'marge',

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import refrigerate from '.'
+import { refrigerate } from '.'
 
 describe('refrigerator', function () {
   describe('throws on', function () {
