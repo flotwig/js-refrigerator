@@ -1,6 +1,6 @@
 {
   "name": "refrigerator",
-  "version": "0.0.2",
+  "version": "0.0.0-development",
   "description": "A small, 0-dependency JS module that can be used to make all property changes on an object throw an error.",
   "main": "src/index",
   "repository": "https://github.com/flotwig/js-refrigerator",
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "yarn build && `npm bin`/jest src/*.spec.js",
     "build": "tsc",
-    "prepublishOnly": "yarn test"
+    "release": "yarn test && npx semantic-release"
   },
   "files": [
     "src/index.js",
