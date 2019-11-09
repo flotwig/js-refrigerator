@@ -39,4 +39,5 @@ release:
     - master
   stage: release
   script:
+    - git remote set-url origin https://github.com/flotwig/js-refrigerator.git
     - yarn release
