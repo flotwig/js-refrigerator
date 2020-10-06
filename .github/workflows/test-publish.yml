@@ -1,0 +1,25 @@
+name: test-publish
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+strategy:
+  matrix:
+    node-version: [6.x, 8.x, 10.x, 12.x]
+
+steps:
+- uses: actions/checkout@v2
+- name: Use Node.js ${{ matrix.node-version }}
+  uses: actions/setup-node@v1
+  with:
+    node-version: ${{ matrix.node-version }}
+    registry-url: 'https://registry.npmjs.org'
+- run: yarn
+- run: yarn test
+- run: yarn release
+  env:
+    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
